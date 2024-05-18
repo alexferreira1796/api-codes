@@ -1,0 +1,16 @@
+Explicação dos arquivos:
+database:
+migrations: Pasta para armazenar as migrações do banco de dados, que são scripts que atualizam o esquema do banco de dados.
+entities: Pasta para armazenar as entidades do banco de dados, que são classes que representam tabelas no banco de dados.
+Code.ts: Define a entidade Code com suas propriedades (id, value, createdAt, etc.).
+dataSource.ts: Arquivo que define a conexão com o banco de dados e inicializa o TypeORM.
+routes:
+code.routes.ts: Define as rotas da API para gerar e buscar códigos.
+controllers:
+code.controller.ts: Contém a lógica para lidar com as requisições da API, utilizando o CodeService.
+services:
+code.service.ts: Contém a lógica de negócio para gerar e buscar códigos, utilizando o repositório do TypeORM e o CodeGenerator.
+utils:
+codeGenerator.ts: Contém a lógica para gerar códigos, utilizando um algoritmo específico.
+app.ts: Inicializa o Express, configura as rotas, middlewares e outros componentes da aplicação.
+server.ts: Inicia o servidor Node.js e define a porta de escuta.

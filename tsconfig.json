@@ -1,0 +1,45 @@
+{
+   "compilerOptions": {
+      "lib": [
+         "es5",
+         "es6"
+      ],
+      "target": "es5",
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "outDir": "./build",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "baseUrl": "./src",
+      "paths": {
+         "@controllers/*": [
+            "controllers/*"
+         ],
+         "@entities/*": [
+            "entities/*"
+         ],
+         "@database/*": [
+            "database/*"
+         ],
+         "@routes/*": [
+            "routes/*"
+         ],
+         "@services/*": [
+            "services/*"
+         ],
+         "@utils/*": [
+            "utils/*"
+         ],
+         "@types/*": [
+            "types/*"
+         ],
+         "@schedules/*": [
+            "schedules/*"
+         ],
+         "@/*": [
+            "*/"
+         ]
+      }
+   }
+}
