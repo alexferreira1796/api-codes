@@ -4,15 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node build/src/index.js",
+    "start": "node -r module-alias/register dist/src/index.js",
+    "start:prod": "node -r module-alias/register dist/src/index.js",
     "dev": "nodemon -r tsconfig-paths/register src/index.ts",
     "build": "tsc",
     "migrate:dev": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/data-source.dev.ts",
     "migrate:prod": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/data-source.prod.ts",
     "migrate:undo": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert",
     "migration:create": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:create",
-    "migration:generate": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d ./src/data-source.ts migration:generate",
-    "start:prod": "node build/src/index.js"
+    "migration:generate": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d ./src/data-source.ts migration:generate"
   },
   "keywords": [],
   "author": "",
