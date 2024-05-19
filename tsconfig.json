@@ -8,6 +8,7 @@
       "module": "commonjs",
       "esModuleInterop": true,
       "outDir": "./build",
+      "skipLibCheck": true,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true,
