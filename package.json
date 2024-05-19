@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r module-alias/register dist/src/index.js",
-    "start:prod": "node -r module-alias/register dist/src/index.js",
+    "start": "node -r module-alias/register build/src/index.js",
+    "start:prod": "node -r module-alias/register build/src/index.js",
     "dev": "nodemon -r tsconfig-paths/register src/index.ts",
     "build": "tsc",
     "migrate:dev": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/data-source.dev.ts",
