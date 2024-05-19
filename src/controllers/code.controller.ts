@@ -52,7 +52,9 @@ export class CodeController {
     if (codeResult) {
       res.status(200).json(codeResult);
     } else {
-      res.status(404).send("Code not found");
+      res.status(404).json({
+        message: "Code not found",
+      });
     }
   }
 

@@ -20,7 +20,9 @@ export class HistoryController {
     if (historyResult) {
       res.status(200).json(historyResult);
     } else {
-      res.status(404).send("History not found");
+      res.status(404).send({
+        error: "History not found",
+      });
     }
   }
 
