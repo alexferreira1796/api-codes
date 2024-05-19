@@ -37,6 +37,9 @@
          "@schedules/*": [
             "schedules/*"
          ],
+         "@config/*": [
+            "config/*"
+         ],
          "@/*": [
             "*/"
          ]

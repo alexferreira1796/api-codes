@@ -4,9 +4,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from "typeorm";
 import { v4 as uuidv4 } from "uuid";
-
+import { CodeHistory } from "./codeHistory";
 @Entity()
 export class Code {
   @PrimaryGeneratedColumn("uuid")
@@ -14,12 +15,6 @@ export class Code {
 
   @Column()
   value: string;
-
-  @Column()
-  title: string;
-
-  @Column()
-  description: string;
 
   @Column({ default: "BR" })
   type: string;
@@ -33,14 +28,17 @@ export class Code {
   @UpdateDateColumn()
   updatedAt: Date;
 
+  @OneToMany(() => CodeHistory, (history) => history.code, {
+    cascade: true,
+    onDelete: "CASCADE",
+  })
+  history: CodeHistory[];
+
   constructor() {
     this.id = uuidv4();
     this.value = "";
-    this.title = "";
-    this.description = "";
     this.type = "";
     this.status = "";
-    this.description = "";
     this.createdAt = new Date();
     this.updatedAt = new Date();
   }

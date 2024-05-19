@@ -9,9 +9,9 @@ export class CodeController {
     this.codeService = new CodeService();
   }
 
-  async generateCode(req: Request, res: Response): Promise<void> {
+  async generateCode(_: Request, res: Response): Promise<void> {
     const codes = await this.codeService.generateCode();
-    res.json(codes);
+    res.status(200).json(codes);
   }
 
   async generateInternationalCodes(req: Request, res: Response): Promise<void> {
@@ -25,11 +25,9 @@ export class CodeController {
     const codes = await this.codeService.generateCodes({
       quantity,
       type: "INT",
-      title: "[Shunyu Logistics] - Recebido pela transportadora",
-      description:
-        "Notificação da transportadora: Sucesso de desembaraço de exportação",
+      status: "SEND",
     });
-    res.json(codes);
+    res.status(200).json(codes);
   }
 
   async generateNationalCodes(req: Request, res: Response): Promise<void> {
@@ -43,25 +41,25 @@ export class CodeController {
     const codes = await this.codeService.generateCodes({
       quantity,
       type: "BR",
-      title: "CRIADO",
-      description:
-        "O pedido foi criado com sucesso. Aguarde os demais status de rastreamento",
+      status: "SEND",
     });
-    res.json(codes);
+    res.status(200).json(codes);
   }
 
   async getByCode(req: Request, res: Response): Promise<void> {
     const code = req.params.code ?? "";
     const codeResult = await this.codeService.getByCode(code);
     if (codeResult) {
-      res.json(codeResult);
+      res.status(200).json(codeResult);
     } else {
       res.status(404).send("Code not found");
     }
   }
 
-  async getAllCodes(req: Request, res: Response): Promise<void> {
+  async getAllCodes(_: Request, res: Response): Promise<void> {
     const codes = await this.codeService.getAllCodes();
-    res.json(codes);
+    res.status(200).json(codes);
   }
 }
+
+export default CodeController;

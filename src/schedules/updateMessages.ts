@@ -1,12 +1,13 @@
 import cron from "node-cron";
-import { CodeService } from "@services/code.service";
+import { HistoryController } from "@controllers/history.controller";
 
-const codeService = new CodeService();
+const historyController = new HistoryController();
 
-// Schedule the task to run every 8 days
-cron.schedule("0 0 */8 * *", async () => {
+// Agenda a tarefa para rodar a cada 4 dias à meia-noite
+cron.schedule("0 0 */4 * *", async () => {
   console.log("Atualizando mensagens e títulos...");
-  await codeService.updateMessages();
+  await historyController.updateHistoryCode();
   console.log("Mensagens e títulos atualizados.");
 });
 // "*/10 * * * * *"
+// 0 0 */4 * *

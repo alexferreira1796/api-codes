@@ -1,5 +1,6 @@
 import express from "express";
 import codeRoutes from "./routes/code.routes";
+import historyRoutes from "./routes/history.routes";
 
 const app = express();
 
@@ -10,5 +11,6 @@ app.get("/api", (req, res) => {
 });
 
 app.use("/api", codeRoutes);
+app.use("/api", historyRoutes);
 
 export default app;
