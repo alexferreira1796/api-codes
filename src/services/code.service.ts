@@ -1,6 +1,6 @@
 import { AppDataSource } from "../data-source";
-import { Code } from "db/entities/code";
-import { CodeHistory } from "db/entities/codeHistory";
+import { Code } from "../db/entities/code";
+import { CodeHistory } from "../db/entities/codeHistory";
 import { codeGenerator, CodeGeneratorType } from "../utils/codeGenerator";
 import { messages, Messages } from "../config/messages";
 

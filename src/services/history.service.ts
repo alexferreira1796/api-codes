@@ -1,6 +1,6 @@
 import { AppDataSource } from "../data-source";
 
-import { CodeHistory } from "db/entities/codeHistory";
+import { CodeHistory } from "../db/entities/codeHistory";
 
 import { messages, Messages } from "../config/messages";
 
