@@ -3,7 +3,7 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
-  JoinColumn, // Importar a anotação JoinColumn
+  JoinColumn,
   CreateDateColumn,
   UpdateDateColumn,
 } from "typeorm";

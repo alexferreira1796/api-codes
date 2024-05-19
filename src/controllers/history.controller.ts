@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { HistoryService } from "@services/history.service";
+import { HistoryService } from "../services/history.service";
 
 export class HistoryController {
   private historyService: HistoryService;

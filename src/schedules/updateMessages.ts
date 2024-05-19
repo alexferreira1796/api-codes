@@ -1,5 +1,5 @@
 import cron from "node-cron";
-import { HistoryController } from "@controllers/history.controller";
+import { HistoryController } from "../controllers/history.controller";
 
 const historyController = new HistoryController();
 

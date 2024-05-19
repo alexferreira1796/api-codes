@@ -2,7 +2,7 @@ import { AppDataSource } from "../data-source";
 
 import { CodeHistory } from "db/entities/codeHistory";
 
-import { messages, Messages } from "@config/messages";
+import { messages, Messages } from "../config/messages";
 
 import CodeService from "./code.service";
 

@@ -2,7 +2,7 @@ import express from "express";
 import codeRoutes from "./routes/code.routes";
 import historyRoutes from "./routes/history.routes";
 
-import authenticateToken from "middlewares/authenticateToken";
+import authenticateToken from "./middlewares/authenticateToken";
 
 const app = express();
 

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { CodeService } from "@services/code.service";
+import { CodeService } from "../services/code.service";
 
 export class CodeController {
   private codeService: CodeService;
