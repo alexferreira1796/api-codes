@@ -15,7 +15,12 @@ export class HistoryService {
   }
 
   async getAllHistory(): Promise<CodeHistory[]> {
-    return await this.historyRepository.find();
+    return await this.historyRepository.find({
+      relations: ["code"],
+      order: {
+        createdAt: "DESC",
+      },
+    });
   }
 
   async getHistoryById(id: string): Promise<CodeHistory[]> {

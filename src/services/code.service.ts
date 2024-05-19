@@ -100,7 +100,12 @@ export class CodeService {
   }
 
   async getAllCodes(): Promise<Code[]> {
-    return await this.codeRepository.find({ relations: ["history"] });
+    return await this.codeRepository.find({
+      relations: ["history"],
+      order: {
+        createdAt: "DESC",
+      },
+    });
   }
 
   async updateCodeStatus(id: string, status: Status): Promise<void> {
