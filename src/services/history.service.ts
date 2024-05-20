@@ -40,11 +40,11 @@ export class HistoryService {
         nextStep = lastHistory.step + 1;
       }
 
-      let message: Messages | null = null;
+      let message: Messages;
       if (code.type === "BR") {
-        message = messages.BR.find((msg) => msg.step === nextStep);
+        message = messages.BR.find((msg) => msg.step === nextStep) as Messages;
       } else {
-        message = messages.INT.find((msg) => msg.step === nextStep);
+        message = messages.INT.find((msg) => msg.step === nextStep) as Messages;
       }
 
       if (message) {

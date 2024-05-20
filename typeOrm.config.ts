@@ -7,7 +7,7 @@ dotenv.config();
 export const AppDataSource = new DataSource({
   type: "postgres",
   ssl: {
-    rejectUnauthorized: false,
+    rejectUnauthorized: true,
   },
   host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT),
