@@ -1,5 +1,5 @@
-let entities = ["./dist/src/db/entities/**/*.{ts,js}"];
-let migrations = ["./dist/src/db/migrations/**/*.{ts,js}"];
+let entities = ["./src/db/entities/**/*.{ts,js}"];
+let migrations = ["./src/db/migrations/**/*.{ts,js}"];
 let synchronize = true;
 let ssl = {};
 
