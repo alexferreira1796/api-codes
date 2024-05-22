@@ -56,8 +56,8 @@ export class CodeService {
     quantity,
     type,
     status,
-  }: IGenerateCodes): Promise<Code[]> {
-    const codes: Code[] = [];
+  }: IGenerateCodes): Promise<string[]> {
+    const codes: string[] = [];
 
     for (let i = 0; i < quantity; i++) {
       const newCode = await this.generateUniqueCode(type);
@@ -79,7 +79,7 @@ export class CodeService {
         await this.historyRepository.save(history);
       }
 
-      codes.push(savedCode);
+      codes.push(savedCode.value);
     }
 
     return codes;
