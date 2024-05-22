@@ -100,12 +100,12 @@ export class CodeService {
   }
 
   async getAllCodes(): Promise<Code[]> {
-    return await this.codeRepository.find({
-      relations: ["history"],
-      order: {
-        createdAt: "DESC",
-      },
-    });
+    return await this.codeRepository
+      .createQueryBuilder("code")
+      .leftJoinAndSelect("code.history", "history")
+      .orderBy("code.createdAt", "DESC")
+      .addOrderBy("history.step", "ASC")
+      .getMany();
   }
 
   async updateCodeStatus(id: string, status: Status): Promise<void> {
